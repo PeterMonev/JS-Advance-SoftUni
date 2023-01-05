@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        ul {
+            border: 1px solid black;
+            margin: 16px;
+            padding: 16px;
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>3</li>
+        <li>2</li>
+        <li>5</li>
+        <li>4</li>
+    </ul>
+    <button onclick="sort()">Sort list</button>
+    <script>
+            function sort(){
+              const list = document.getElementById('list')
+               const elements = [...list.children]
+               elements.sort((a, b) => {
+                return  Number(a.textContent) - Number(b.textContent);
+                })
+
+                for(let element of elements){
+                    list.appendChild(element)
+                }
+            }      
+   </script>
+</body>
+</html>
